@@ -27,12 +27,11 @@
     </Compile>
     <Compile Include="MainController.py" />
     <Compile Include="MainMenuController.py" />
-    <Compile Include="controllers\__init__.py" />
     <Compile Include="Main.py" />
     <Compile Include="ImageViewController.py" />
+    <Compile Include="GroupedMenuController.py" />
   </ItemGroup>
   <ItemGroup>
-    <Folder Include="controllers\" />
     <Folder Include="ui\" />
   </ItemGroup>
   <ItemGroup>

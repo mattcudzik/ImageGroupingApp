@@ -11,7 +11,7 @@ class MainController(object):
         self.window = QMainWindow()
         loadUi('ui/mainWindow.ui', self.window)
         self.layout = self.window.findChild(QVBoxLayout, "layout")
-        self.currentWidget = ImageViewController('assets/cat.png', self) #MainMenuController(self)
+        self.currentWidget = MainMenuController(self)
         self.layout.addWidget(self.currentWidget)
         self.window.show()
         self.app.exec()
