@@ -3,7 +3,7 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
 VisualStudioVersion = 17.3.32929.385
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{888888A0-9F3D-457C-B088-3A5042F75D52}") = "ImageGroupingApp", "PythonApplication2\ImageGroupingApp.pyproj", "{AE8B6016-1882-4A4B-A365-A48E055060E2}"
+Project("{888888A0-9F3D-457C-B088-3A5042F75D52}") = "ImageGroupingApp", "ImageGroupingApp\ImageGroupingApp.pyproj", "{AE8B6016-1882-4A4B-A365-A48E055060E2}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -18,6 +18,6 @@ Global
 		HideSolutionNode = FALSE
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
-		SolutionGuid = {95E0C940-954F-4BC9-8B4F-8A29464B2429}
+		SolutionGuid = {EC286D0A-ED73-4BE5-8269-54E3CEC20980}
 	EndGlobalSection
 EndGlobal

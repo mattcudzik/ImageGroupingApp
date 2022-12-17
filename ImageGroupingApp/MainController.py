@@ -12,16 +12,18 @@ class MainController(object):
         loadUi('ui/mainWindow.ui', self.window)
         self.layout = self.window.findChild(QVBoxLayout, "layout")
         self.currentWidget = MainMenuController(self)
-        self.layout.addWidget(self.currentWidget)
+        self.window.setCentralWidget(self.currentWidget)
+
         self.window.show()
         self.app.exec()
 
     def changeMenu(self, newMenu):
-        self.layout.removeWidget(self.currentWidget)
         self.currentWidget.deleteLater()
-        self.layout.addWidget(newMenu)
-        self.currentWidget = newMenu
+        self.window.setCentralWidget(newMenu)
+        self.window.adjustSize()
 
+        self.currentWidget = newMenu
+        self.currentWidget.mainLoop()
 
 
 

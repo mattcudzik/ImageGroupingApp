@@ -30,9 +30,27 @@
     <Compile Include="Main.py" />
     <Compile Include="ImageViewController.py" />
     <Compile Include="GroupedMenuController.py" />
+    <Compile Include="model\Annotation.py">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="model\__init__.py">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="tools\EraserTool.py">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="tools\ITool.py">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="tools\PaintBrushTool.py" />
+    <Compile Include="tools\__init__.py">
+      <SubType>Code</SubType>
+    </Compile>
   </ItemGroup>
   <ItemGroup>
+    <Folder Include="model\" />
     <Folder Include="ui\" />
+    <Folder Include="tools\" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="ui\imageMenu.ui" />

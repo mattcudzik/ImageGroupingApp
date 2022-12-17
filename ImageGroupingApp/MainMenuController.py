@@ -1,4 +1,4 @@
-from PyQt5.QtWidgets import QMainWindow, QPushButton, QLabel
+from PyQt5.QtWidgets import QPushButton, QLabel
 from PyQt5.uic import loadUi
 from IMenuController import IMenuController
 
@@ -17,7 +17,7 @@ class MainMenuController(IMenuController):
     def onTestButtonClicked(self):
         self.label.setText("TEST")
 
-        self.mainController.changeMenu(ImageViewController.ImageViewController('assets/cat.png', self.mainController))
+        self.mainController.changeMenu(ImageViewController.ImageViewController('assets/img1.png', self.mainController))
 
 
 
