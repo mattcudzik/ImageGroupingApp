@@ -33,6 +33,7 @@
     <Compile Include="model\Annotation.py">
       <SubType>Code</SubType>
     </Compile>
+    <Compile Include="model\Image.py" />
     <Compile Include="model\__init__.py">
       <SubType>Code</SubType>
     </Compile>
@@ -43,19 +44,32 @@
       <SubType>Code</SubType>
     </Compile>
     <Compile Include="tools\PaintBrushTool.py" />
+    <Compile Include="tools\TextTool.py">
+      <SubType>Code</SubType>
+    </Compile>
     <Compile Include="tools\__init__.py">
       <SubType>Code</SubType>
     </Compile>
   </ItemGroup>
   <ItemGroup>
     <Folder Include="model\" />
-    <Folder Include="ui\" />
     <Folder Include="tools\" />
+    <Folder Include="ui\" />
+    <Folder Include="ui\icons\" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="ui\groupedMenu.ui" />
+    <Content Include="ui\icons\check.png" />
+    <Content Include="ui\icons\clipboard.png" />
+    <Content Include="ui\icons\color-wheel.png" />
+    <Content Include="ui\icons\down-left.png" />
+    <Content Include="ui\icons\edit.png" />
+    <Content Include="ui\icons\eraser.png" />
+    <Content Include="ui\imageGroupWidget.ui" />
     <Content Include="ui\imageMenu.ui" />
     <Content Include="ui\mainMenu.ui" />
     <Content Include="ui\mainWindow.ui" />
+    <Content Include="ui\singleImageWidget.ui" />
   </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)\Python Tools\Microsoft.PythonTools.targets" />
   <!-- Uncomment the CoreCompile target to enable the Build command in
@@ -63,6 +77,9 @@
        the BeforeBuild and AfterBuild targets below. -->
   <!--<Target Name="CoreCompile" />-->
   <Target Name="BeforeBuild">
+    <ItemGroup>
+      <Content Include="ui\\**\*.ui" />
+    </ItemGroup>
   </Target>
   <Target Name="AfterBuild">
   </Target>
