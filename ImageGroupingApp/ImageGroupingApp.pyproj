@@ -33,7 +33,12 @@
     <Compile Include="model\Annotation.py">
       <SubType>Code</SubType>
     </Compile>
+    <Compile Include="model\ExampleMetric.py" />
+    <Compile Include="model\GroupingModel.py" />
     <Compile Include="model\Image.py" />
+    <Compile Include="model\Images.py" />
+    <Compile Include="model\IMetric.py" />
+    <Compile Include="model\main.py" />
     <Compile Include="model\__init__.py">
       <SubType>Code</SubType>
     </Compile>
