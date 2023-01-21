@@ -1,11 +1,16 @@
-import cv2
-import os
-import image_similarity_measures
-from image_similarity_measures.quality_metrics import rmse, ssim, sre
+from ctypes.wintypes import FLOAT
+from .IMetric import IMetric
+from .Image import Image
+from image_similarity_measures.quality_metrics import ssim
 
 
-class ExampleMetric:
+class ExampleMetric(IMetric):
 
+    @staticmethod
+    def compareImages(image1: Image, image2: Image) -> FLOAT:
+        return ssim(image1.imageForCalculations, image2.imageForCalculations)
+
+    '''
     def Compare(self, path, paths):
         img = path
 
@@ -30,3 +35,4 @@ class ExampleMetric:
             result.append(i)
 
         return result
+    '''

@@ -2,14 +2,21 @@ import cv2
 import os
 import numpy as np
 from .Image import Image
+from .GroupingModel import GroupingModel
 
 class Annotation(object):
 	def __init__(self, image: Image):
 		self.image = image
 		self.imageLayer = cv2.imread(self.image.imagePath)
 		
-		self.annotationPath = "annotations/" + self.image.imagePath
+		folderDir = GroupingModel.folderDir
+		mainFolderName = folderDir.split('/')[-1]
+		self.annotationPath = "annotations/" + mainFolderName 
+		self.annotationPath += self.image.imagePath[len(folderDir):]
 
+		self.annotationPath = self.annotationPath.replace('\\', '/')
+		
+		#create empty png as annotiation layer
 		words = self.annotationPath.split('.')
 		words[-1] = ".png"
 
@@ -19,6 +26,7 @@ class Annotation(object):
 		
 		words[-1] = ""
 		directionPath = '/'.join(words)
+
 
 		if not os.path.exists(directionPath):
 			os.makedirs(directionPath)

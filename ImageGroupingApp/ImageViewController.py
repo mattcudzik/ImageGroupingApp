@@ -2,7 +2,7 @@ from PyQt5.QtWidgets import QPushButton, QColorDialog, QSlider, QLabel, QFrame, 
 from PyQt5.uic import loadUi
 from IMenuController import IMenuController
 
-import MainMenuController
+import GroupedMenuController
 import MainController
 
 from model.Annotation import Annotation
@@ -95,7 +95,7 @@ class ImageViewController(IMenuController):
 
 
 	def onBackButtonClicked(self):
-		MainController.MainController.getInstance().changeMenu(MainMenuController.MainMenuController()) 
+		MainController.MainController.getInstance().changeMenu(GroupedMenuController.GroupedMenuController()) 
 		
 		self.windowOpened = False
 		cv2.destroyAllWindows()

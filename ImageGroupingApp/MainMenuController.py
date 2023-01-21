@@ -1,32 +1,37 @@
-from PyQt5.QtWidgets import QPushButton, QLabel
+from asyncio.windows_events import NULL
+from PyQt5.QtWidgets import QPushButton, QFileDialog
 from PyQt5.uic import loadUi
 from IMenuController import IMenuController
 
 import GroupedMenuController
 import ImageViewController
 import MainController
-from model.Image import Image
+import ProgressBarMenuController
+from model.GroupingModel import GroupingModel
 
 class MainMenuController(IMenuController):
     def __init__(self):
-        #IMenuController.__init__(self, mainController)
         IMenuController.__init__(self)
         loadUi('ui/mainMenu.ui', self)
 
-        self.testButton = self.findChild(QPushButton, "testButton")
-        self.label = self.findChild(QLabel, "label")
-        self.testButton.clicked.connect(self.onTestButtonClicked)
+        self.createButton = self.findChild(QPushButton, "createButton")
+        self.createButton.clicked.connect(self.onCreateButtonClicked)
 
-        self.nextButton = self.findChild(QPushButton, "pushButton")
-        self.nextButton.clicked.connect(self.onNextButtonClicked)
+        self.loadButton = self.findChild(QPushButton, "loadButton")
+        self.loadButton.clicked.connect(self.onLoadButtonClicked)
 
-    def onTestButtonClicked(self):
-        self.label.setText("TEST")
+    def onLoadButtonClicked(self):
+        #MainController.MainController.getInstance().changeMenu(ImageViewController.ImageViewController(img))
+        pass
 
-        img = Image('assets/mountain1.jpg')
-        MainController.MainController.getInstance().changeMenu(ImageViewController.ImageViewController(img))
 
-    def onNextButtonClicked(self):
-        MainController.MainController.getInstance().changeMenu(GroupedMenuController.GroupedMenuController())
+    def onCreateButtonClicked(self):
+        path = str(QFileDialog.getExistingDirectory(self, "Select Directory"))
+        if len(path) != 0:
+            GroupingModel.folderDir = path
+        
+            MainController.MainController.getInstance().changeMenu(ProgressBarMenuController.ProgressBarMenuController())
+
+
 
 

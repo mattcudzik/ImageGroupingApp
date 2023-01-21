@@ -1,11 +1,12 @@
 from PyQt5.QtWidgets import QApplication, QMainWindow, QVBoxLayout
 from MainMenuController import MainMenuController
+from model.GroupingModel import  GroupingModel
 
 from PyQt5.uic import loadUi
 import sys
 
 class MainController(object):
-
+	#Singleton
 	__instance = None
 
 	@staticmethod 
