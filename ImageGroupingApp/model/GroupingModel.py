@@ -4,6 +4,8 @@ from . import IMetric
 from .ExampleMetric import ExampleMetric
 from .Image import Image
 from .Group import Group
+from PyQt5.QtGui import QPixmap
+from PyQt5 import QtCore
 
 class GroupingModel(object):
 	#allowed file types
@@ -11,6 +13,7 @@ class GroupingModel(object):
 	#path to main images folder
 	folderDir = ""
 	
+	THUMBNAIL_SIZE = (290,250)
 
 	#Singleton
 	__instance = None
@@ -56,8 +59,11 @@ class GroupingModel(object):
 					if self.progressBarMenu != None:
 						progress = (counter * 100) /filesAmount
 						self.progressBarMenu.updateProgresBar(progress)
-
-					self.loadedImages.append(Image(os.path.join(root, f), f))
+					imgToAdd = Image(os.path.join(root, f), f)
+					w = self.THUMBNAIL_SIZE[0]
+					h = self.THUMBNAIL_SIZE[1]
+					imgToAdd.thumbnail = QPixmap(imgToAdd.imagePath).scaled(w,h, QtCore.Qt.KeepAspectRatio)
+					self.loadedImages.append(imgToAdd)
 					counter += 1
 
 	def groupImages(self):

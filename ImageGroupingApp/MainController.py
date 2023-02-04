@@ -3,6 +3,7 @@ from MainMenuController import MainMenuController
 from model.GroupingModel import  GroupingModel
 
 from PyQt5.uic import loadUi
+
 import sys
 
 class MainController(object):

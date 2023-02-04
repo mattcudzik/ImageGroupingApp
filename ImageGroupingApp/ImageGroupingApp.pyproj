@@ -12,6 +12,9 @@
     <OutputPath>.</OutputPath>
     <Name>ImageGroupingApp</Name>
     <RootNamespace>PythonApplication2</RootNamespace>
+    <TestFramework>unittest</TestFramework>
+    <UnitTestPattern>test*.py</UnitTestPattern>
+    <UnitTestRootDirectory>.</UnitTestRootDirectory>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)' == 'Debug' ">
     <DebugSymbols>true</DebugSymbols>
@@ -26,6 +29,9 @@
       <SubType>Code</SubType>
     </Compile>
     <Compile Include="MainController.py" />
+    <Compile Include="model\testModel.py">
+      <SubType>Code</SubType>
+    </Compile>
     <Compile Include="ProgressBarMenuController.py" />
     <Compile Include="MainMenuController.py" />
     <Compile Include="Main.py" />
